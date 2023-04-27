@@ -1,11 +1,13 @@
 public class ExecutionThread extends Thread{
     Integer[] monitor;
     int sleep_fix, activity_min, activity_max;
-    public ExecutionThread(Integer[] monitor, int sleep_fix, int activity_min, int activity_max) {
+    Thread t;
+    public ExecutionThread(Integer[] monitor, int sleep_fix, int activity_min, int activity_max, Thread t) {
         this.monitor = monitor;
         this.sleep_fix = sleep_fix;
         this.activity_min = activity_min;
         this.activity_max = activity_max;
+        this.t = t;
     }
 
     public void run() {
@@ -63,6 +65,13 @@ public class ExecutionThread extends Thread{
                 i--;
             }
             System.out.println(this.getName() + " - STATE 2");
+            if(t != null) {
+                try {
+                    t.join();
+                } catch (InterruptedException e) {
+                    
+                }
+            }
         }
     }
 }

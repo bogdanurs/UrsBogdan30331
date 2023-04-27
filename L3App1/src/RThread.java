@@ -10,7 +10,7 @@ public class RThread extends Thread{
 
     public void run(){
 
-        synchronized (this){
+        synchronized (service){
         while (!Main.isStopThreads()) {
 
             try {

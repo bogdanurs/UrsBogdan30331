@@ -12,3 +12,4 @@ public class Main {
 
     }
 }
+//make one transition acquire both of them to fix!!
