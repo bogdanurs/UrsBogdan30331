@@ -41,12 +41,15 @@ public class ExecutionThread extends Thread{
                     e.printStackTrace();
                 }
             }
+
+            System.out.println( );
             System.out.println(this.getName() + "State 1");
             int k = (int) Math.round(Math.random() * (activity_max - activity_min) + activity_min);
             for (int i = 0; i < k * 100000; i++) {
                 i++;
                 i--;
             }
+
             System.out.println(this.getName() + "State 2");
         }
         if(this.getName().equals("Thread-2")) {
@@ -57,6 +60,7 @@ public class ExecutionThread extends Thread{
                     e.printStackTrace();
                 }
             }
+
             System.out.println(this.getName() + "State 1");
             int k = (int) Math.round(Math.random() * (activity_max - activity_min) + activity_min);
             for (int i = 0; i < k * 100000; i++) {
